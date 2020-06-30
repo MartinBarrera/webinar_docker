@@ -14,16 +14,13 @@ services:
       - frontend
   
   app_server:
-    image: my_app_image:latest
+    image: my_app_image
     build: app_server/
     restart: unless-stopped
     volumes: 
       - ./app_server/src:/app
     networks:
       - frontend
-
-volumes:
-  db_volume:
 
 networks:
   frontend:
